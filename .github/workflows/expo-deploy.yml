@@ -1,4 +1,4 @@
-name: Deploy to Expo
+name: Deploy to Expo and TestFlight
 
 on:
   push:
@@ -30,6 +30,18 @@ jobs:
       
     - name: Deploy to Expo with EAS Update
       run: npx eas update --branch main --message "Auto-update from GitHub Actions" --non-interactive
+      env:
+        EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        CI: 1
+        
+    - name: Build iOS app for TestFlight
+      run: npx eas build --platform ios --profile production --non-interactive --no-wait
+      env:
+        EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        CI: 1
+
+    - name: Submit iOS build to TestFlight
+      run: npx eas submit --platform ios --profile production --non-interactive
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         CI: 1
