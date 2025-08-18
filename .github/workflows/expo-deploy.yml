@@ -27,7 +27,12 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Publish with EAS Update
-      run: npx eas update --branch main --non-interactive
+    - name: Publish to Expo
+      run: npx expo publish --non-interactive
+      env:
+        EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        
+    - name: EAS Update
+      run: npx eas update --branch main --message "Auto-update from GitHub Actions" --non-interactive
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
