@@ -41,7 +41,7 @@ jobs:
         CI: 1
 
     - name: Submit iOS build to TestFlight
-      run: npx eas submit --platform ios --profile production --non-interactive
+      run: npx eas submit --platform ios --latest --non-interactive
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         CI: 1
