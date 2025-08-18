@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Publish to Expo
-      run: npx expo publish --non-interactive
+    - name: Publish with EAS Update
+      run: npx eas update --branch main --non-interactive
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

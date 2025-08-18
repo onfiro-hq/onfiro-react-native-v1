@@ -24,6 +24,13 @@
         "appleTeamId": "F4QWK2GP66"
       }
     }
+  },
+  "update": {
+    "main": {
+      "channel": "main"
+    },
+    "development": {
+      "channel": "development"
+    }
   }
 }
-
