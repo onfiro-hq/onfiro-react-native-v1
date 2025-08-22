@@ -40,6 +40,7 @@ jobs:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         CI: 1
 
+    # Temporarily disabled - App Store Connect app needs to be recreated
     - name: Submit iOS build to TestFlight
       run: npx eas submit --platform ios --latest --non-interactive
       env:
