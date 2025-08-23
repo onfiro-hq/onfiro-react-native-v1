@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.onfiro.app.web",
+      "bundleIdentifier": "com.onfiro.app.web.v1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
